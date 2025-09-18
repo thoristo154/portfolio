@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ImageWorld - Your Digital Image Marketplace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6e6fa;
+            color: #000080;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            border: 2px solid #0000ff;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #0000ff, #add8e6);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 36px;
+            color: yellow;
+            text-shadow: 2px 2px 4px #000000;
+            margin: 0;
+            font-family: "Comic Sans MS", cursive;
+        }
+        
+        .marquee {
+            background-color: yellow;
+            padding: 5px;
+            font-weight: bold;
+            color: red;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .sidebar {
+            width: 200px;
+            float: left;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px dashed #0000ff;
+            margin-right: 20px;
+        }
+        
+        .main {
+            width: 620px;
+            float: left;
+        }
+        
+        .footer {
+            clear: both;
+            text-align: center;
+            padding: 10px;
+            background-color: #0000ff;
+            color: white;
+            font-size: 12px;
+        }
+        
+        .button {
+            background-color: #0000ff;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px outset #0000ff;
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+        }
+        
+        .counter {
+            text-align: center;
+            padding: 10px;
+            font-family: "Courier New", monospace;
+            font-size: 24px;
+            color: #ff0000;
+        }
+        
+        .guestbook {
+            background-color: #ffffcc;
+            border: 1px solid #cccc00;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        
+        .divider {
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="20" height="10" fill="blue"/><rect y="10" width="20" height="10" fill="yellow"/></svg>');
+            background-repeat: repeat-x;
+        }
+        
+        .product {
+            background-color: #f0f0f0;
+            border: 1px solid #0000ff;
+            padding: 10px;
+            margin: 10px 0;
+            display: inline-block;
+            width: 280px;
+            vertical-align: top;
+        }
+        
+        .product-image {
+            width: 260px;
+            height: 150px;
+            background-color: #add8e6;
+            border: 1px solid #0000ff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .product-title {
+            font-weight: bold;
+            color: #0000ff;
+        }
+        
+        .product-price {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .user-menu {
+            background-color: #ffffcc;
+            border: 1px solid #cccc00;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .categories {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .categories li {
+            padding: 5px;
+            border-bottom: 1px dashed #0000ff;
+            cursor: pointer;
+        }
+        
+        .categories li:hover {
+            background-color: #e0e0ff;
+        }
+        
+        .blink {
+            animation: blink 1s steps(1) infinite;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ImageWorld Marketplace</h1>
+            <div class="marquee">
+                <marquee behavior="scroll" direction="left">*** WELCOME TO THE BEST IMAGE MARKETPLACE! *** NEW IMAGES ADDED DAILY! ***</marquee>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="sidebar">
+                <h3>Image Categories</h3>
+                <ul class="categories">
+                    <li>Nature <span style="color: red;">(2,066)</span></li>
+                    <li>Urban <span style="color: red;">(981)</span></li>
+                    <li>Portraits <span style="color: red;">(2,146)</span></li>
+                    <li>Abstract <span style="color: red;">(1,102)</span></li>
+                    <li>Vintage <span style="color: red;">(660)</span></li>
+                    <li>Technology <span style="color: red;">(591)</span></li>
+                    <li>Space <span style="color: red;">(455)</span></li>
+                    <li>Animals <span style="color: red;">(305)</span></li>
+                    <li>Food <span style="color: red;">(264)</span></li>
+                    <li>Travel <span style="color: red;">(127)</span></li>
+                </ul>
+                
+                <div style="margin-top: 20px;">
+                    <h3>User Menu</h3>
+                    <div class="user-menu">
+                        <div>Messages: <span style="color: red;">0</span></div>
+                        <div>Orders: <span style="color: red;">0</span></div>
+                        <div>Account: <span style="color: red;">$0.00</span></div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <h3>Search Images</h3>
+                    <input type="text" style="width: 90%; padding: 5px;">
+                    <button class="button" style="width: 100%; margin: 5px 0;">Search</button>
+                </div>
+            </div>
+            
+            <div class="main">
+                <h2>Featured Images</h2>
+                
+                <div class="product">
+                    <div class="product-image">[ Urban Nightscape ]</div>
+                    <div class="product-title">Urban Nightscape - High Resolution City Lights</div>
+                    <div class="product-price">$2.45</div>
+                    <button class="button">Add to Cart</button>
+                </div>
+                
+                <div class="product">
+                    <div class="product-image">[ Mountain Sunrise ]</div>
+                    <div class="product-title">Mountain Sunrise - Breathtaking Nature Photo</div>
+                    <div class="product-price">$3.20</div>
+                    <button class="button">Add to Cart</button>
+                </div>
+                
+                <div class="product">
+                    <div class="product-image">[ Vintage Film ]</div>
+                    <div class="product-title">Vintage Film Grain Texture Pack (10 Images)</div>
+                    <div class="product-price">$1.75</div>
+                    <button class="button">Add to Cart</button>
+                </div>
+                
+                <div class="product">
+                    <div class="product-image">[ Cyberpunk City ]</div>
+                    <div class="product-title">Cyberpunk Cityscape - Neon Futuristic Urban</div>
+                    <div class="product-price">$4.50</div>
+                    <button class="button">Add to Cart</button>
+                </div>
+                
+                <div class="product">
+                    <div class="product-image">[ Macro Nature ]</div>
+                    <div class="product-title">Macro Nature - Extreme Closeup Plant Details</div>
+                    <div class="product-price">$2.80</div>
+                    <button class="button">Add to Cart</button>
+                </div>
+                
+                <div class="product">
+                    <div class="product-image">[ Desert Landscape ]</div>
+                    <div class="product-title">Desert Landscape - Sahara Dunes Golden Hour</div>
+                    <div class="product-price">$3.10</div>
+                    <button class="button">Add to Cart</button>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="counter">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><rect width='16' height='16' fill='black'/><rect x='2' y='2' width='12' height='12' fill='%23000080'/></svg>" alt="*"> 
+                    Visitors: <b>008542</b> 
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><rect width='16' height='16' fill='black'/><rect x='2' y='2' width='12' height='12' fill='%23000080'/></svg>" alt="*">
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="guestbook">
+                    <h3>Sign Our Guestbook!</h3>
+                    <form>
+                        Name: <input type="text"><br>
+                        Email: <input type="text"><br>
+                        Comments:<br>
+                        <textarea rows="4" cols="40"></textarea><br>
+                        <input type="submit" value="Submit" class="button">
+                    </form>
+                </div>
+            </div>
+            
+            <div style="clear: both;"></div>
+        </div>
+        
+        <div class="footer">
+            <p>This page is best viewed with Internet Explorer 5.0 at 800x600 resolution</p>
+            <p>Copyright © 2003 - ImageWorld Marketplace - All Rights Reserved</p>
+            <p>Last updated: 06/12/2003</p>
+            <p>Email us at: <a href="mailto:admin@imageworld.com" style="color: white;">admin@imageworld.com</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Simple visitor counter that increments
+        let count = 8542;
+        setInterval(() => {
+            count++;
+            document.querySelector('.counter b').textContent = String(count).padStart(6, '0');
+        }, 5000);
+        
+        // Add blinking "Add to Cart" text effect
+        const buttons = document.querySelectorAll('.button');
+        setInterval(() => {
+            buttons.forEach(button => {
+                if (Math.random() > 0.7) {
+                    button.style.visibility = button.style.visibility === 'hidden' ? 'visible' : 'hidden';
+                }
+            });
+        }, 800);
+        
+        // Add to cart functionality
+        buttons.forEach(button => {
+            if (button.textContent === 'Add to Cart') {
+                button.addEventListener('click', function() {
+                    alert('Added to cart! Thank you for your purchase!');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
