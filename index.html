@@ -508,6 +508,147 @@
             border: 1px solid var(--accent);
         }
 
+        /* Services Section */
+        #services {
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 30px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            color: var(--accent-light);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .service-content h3 {
+            color: var(--accent-light);
+            margin-bottom: 15px;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .service-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: bold;
+        }
+
+        /* Education Section */
+        #education {
+            background-color: var(--secondary-bg);
+            position: relative;
+        }
+
+        #education::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom right, transparent 49%, var(--secondary-bg) 50%);
+        }
+
+        .education-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .education-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+            padding: 20px;
+        }
+
+        .education-item:nth-child(odd) {
+            left: 0;
+            padding-right: 40px;
+        }
+
+        .education-item:nth-child(even) {
+            left: 50%;
+            padding-left: 40px;
+        }
+
+        .education-content {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px var(--shadow);
+            position: relative;
+        }
+
+        .education-content::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            transform: rotate(45deg);
+        }
+
+        .education-item:nth-child(odd) .education-content::after {
+            right: -10px;
+        }
+
+        .education-item:nth-child(even) .education-content::after {
+            left: -10px;
+        }
+
+        .education-date {
+            color: var(--accent-light);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
         /* Testimonials Section */
         #testimonials {
             position: relative;
@@ -822,6 +963,31 @@
             .nav-links {
                 display: none;
             }
+
+            .education-timeline::before {
+                left: 20px;
+            }
+
+            .education-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 0;
+            }
+
+            .education-item:nth-child(odd),
+            .education-item:nth-child(even) {
+                left: 0;
+                padding-right: 0;
+                padding-left: 50px;
+            }
+
+            .education-item:nth-child(odd) .education-content::after,
+            .education-item:nth-child(even) .education-content::after {
+                left: 20px;
+                right: auto;
+                top: -10px;
+                transform: rotate(45deg);
+            }
         }
 
         @media (max-width: 768px) {
@@ -838,7 +1004,8 @@
             }
             
             .project-card,
-            .blog-card {
+            .blog-card,
+            .service-card {
                 max-width: 400px;
                 margin: 0 auto;
             }
@@ -854,7 +1021,9 @@
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -947,6 +1116,66 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Web Application Penetration Testing</h3>
+                        <p>You will get a clear and well-structured web application penetration test that identifies common security issues and helps you strengthen your system.</p>
+                        <ul class="service-features">
+                            <li>OWASP Top 10 vulnerability assessment</li>
+                            <li>Industry-standard testing methodologies</li>
+                            <li>Manual security testing and verification</li>
+                            <li>Comprehensive reporting with remediation guidance</li>
+                            <li>Focus on business logic flaws and technical vulnerabilities</li>
+                        </ul>
+                        <a href="#contact" class="btn">Request Service</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Network Security Assessment</h3>
+                        <p>Comprehensive evaluation of your network infrastructure to identify vulnerabilities and misconfigurations.</p>
+                        <ul class="service-features">
+                            <li>Network vulnerability scanning</li>
+                            <li>Firewall and router configuration review</li>
+                            <li>Wireless network security assessment</li>
+                            <li>Network segmentation analysis</li>
+                            <li>Detailed report with risk ratings</li>
+                        </ul>
+                        <a href="#contact" class="btn">Request Service</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Cybersecurity Consultation</h3>
+                        <p>Expert guidance to improve your organization's security posture and implement best practices.</p>
+                        <ul class="service-features">
+                            <li>Security policy development</li>
+                            <li>Risk assessment and management</li>
+                            <li>Security awareness training</li>
+                            <li>Incident response planning</li>
+                            <li>Compliance guidance</li>
+                        </ul>
+                        <a href="#contact" class="btn">Request Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section id="portfolio">
         <div class="container">
@@ -962,7 +1191,7 @@
                             <span class="tool">SQLmap</span>
                             <span class="tool">Custom Scripts</span>
                         </div>
-                        <a href="#">View Case Study →</a>
+                        <a href="https://tryhackme.com/p/thoristo" target="_blank">View Details →</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -975,7 +1204,7 @@
                             <span class="tool">Metasploit</span>
                             <span class="tool">Wireshark</span>
                         </div>
-                        <a href="#">View Case Study →</a>
+                        <a href="https://tryhackme.com/p/thoristo" target="_blank">View Details →</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -989,6 +1218,31 @@
                             <span class="tool">Network Analysis</span>
                         </div>
                         <a href="https://tryhackme.com/p/thoristo" target="_blank">View Profile →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-content">
+                        <div class="education-date">2022 - Present</div>
+                        <h3>Future Academy</h3>
+                        <p>Bachelor of Computer Science (In Progress)</p>
+                        <p>Focus: Software Development, Computer Networks, and Cybersecurity</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-content">
+                        <div class="education-date">2025</div>
+                        <h3>Digital Egypt Pioneers Initiative (DEPI)</h3>
+                        <p>Penetration Testing Track</p>
+                        <p>Specialized training in penetration testing, network security, and ethical hacking with hands-on projects and labs.</p>
                     </div>
                 </div>
             </div>
@@ -1093,7 +1347,7 @@
                 <div>
                     <p>I'm available for security assessments and penetration testing projects. Feel free to reach out if you'd like to discuss your security needs or potential collaboration.</p>
                     <div class="contact-info">
-                        <p><strong>Email:</strong> ahmed.samy@example.com</p>
+                        <p><strong>Email:</strong> ahmedsamyaminhamed@gmail.com</p>
                         <p><strong>Focus:</strong> Web Application Security, Network Security</p>
                         <p><strong>Availability:</strong> Freelance & Contract Projects</p>
                     </div>
@@ -1127,7 +1381,9 @@
             <ul class="footer-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -1218,7 +1474,7 @@
         }, observerOptions);
         
         // Observe elements for animation
-        document.querySelectorAll('.service-card, .skill-category, .project-card, .cert-card, .testimonial-card, .blog-card').forEach(el => {
+        document.querySelectorAll('.service-card, .skill-category, .project-card, .cert-card, .testimonial-card, .blog-card, .education-content').forEach(el => {
             el.style.opacity = '0';
             observer.observe(el);
         });
